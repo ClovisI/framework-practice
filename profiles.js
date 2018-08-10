@@ -17,11 +17,9 @@ let gators = [
   }
 ]
 
-let profileListings
-
 document.addEventListener("DOMContentLoaded", function(){
 
-  profileListings = new Vue({
+  let profileListings = new Vue({
     el: '#profileListings',
     data: {
       profiles: gators
