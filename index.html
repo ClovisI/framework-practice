@@ -14,20 +14,22 @@
     <headline title="My Favorite Alligators"></headline>
   </header>
 
-  <div class="filters">
-    <label>
-      <input type="checkbox" name="icecream">
-      Only show alligators that like ice cream
-    </label>
-  </div>
-
-  <section class="profile-container" id="profileListings">
-    <div class="profile" v-for="profile in profiles">
-      <h3>{{profile.name}}</h3>
-      <img v-bind:src="profile.imgSource" v-bind:alt="profile.name">
-      <p>Hobbies include {{profile.hobbies}}.</p>
+  <div id="profileListings">
+    <div class="filters">
+      <label>
+        <input type="checkbox" v-on:change="icecreamFilter" v-model="icecreamOnly">
+        Only show alligators that like ice cream
+      </label>
     </div>
-  </section>
+
+    <section class="profile-container">
+      <div class="profile" v-for="profile in profiles">
+        <h3>{{profile.name}}</h3>
+        <img v-bind:src="profile.imgSource" v-bind:alt="profile.name">
+        <p>Hobbies include {{profile.hobbies}}.</p>
+      </div>
+    </section>
+  </div>
 
 </body>
 </html>
