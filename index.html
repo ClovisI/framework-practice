@@ -16,10 +16,6 @@
     </h1>
   </header>
 
-  <div id="app">
-  {{ message }}
-</div>
-
   <div class="filters">
     <label>
       <input type="checkbox" name="icecream">
@@ -27,23 +23,11 @@
     </label>
   </div>
 
-  <section class="profile-container">
-    <div class="profile">
-      <h3>Wanda Snapson</h3>
-      <img src="http://www.vaguebuttrue.com/images/1449775760-alligatorclimbsfenceWEBSITE.jpg" alt="Wanda Snapson">
-      <p>Hobbies include having parties.</p>
-    </div>
-
-    <div class="profile">
-      <h3>Elvis Vessley</h3>
-      <img src="https://img-aws.ehowcdn.com/877x500p/s3-us-west-1.amazonaws.com/contentlab.studiod/getty/10c413dcc4d444acbd6810f483028933" alt="Elvis Vessley">
-      <p>Hobbies include surfing, dancing.</p>
-    </div>
-
-    <div class="profile">
-      <h3>Little Britches</h3>
-      <img src="http://nebula.wsimg.com/5df260927e75521ad0f18fae842e522e?AccessKeyId=00569247111AAAE64481&disposition=0&alloworigin=1" alt="Little Britches">
-      <p>Hobbies include shaking, eating fruit.</p>
+  <section class="profile-container" id="profileListings">
+    <div class="profile" v-for="profile in profiles">
+      <h3>{{profile.name}}</h3>
+      <img v-bind:src="profile.imgSource" v-bind:alt="profile.name">
+      <p>Hobbies include {{profile.hobbies}}.</p>
     </div>
   </section>
 
